@@ -1,0 +1,11 @@
+img= cv2.imread("D:/final_img_1.png")
+img1= cv2.imread("D:/final_img_2.png")
+diff_img=cv2.subtract(img,img1)
+print(np.sum(diff_img))
+
+w,h,c=diff_img.shape
+total_pixel_value_count=w*h*c*255
+percentage_match=(total_pixel_value_count - np.sum(diff_img))/total_pixel_value_count*100
+
+percentage_match
+plt.imshow(diff_img)
